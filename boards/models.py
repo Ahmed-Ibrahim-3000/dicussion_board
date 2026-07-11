@@ -46,10 +46,10 @@ class Post(models.Model):
     )
   created_by = models.ForeignKey(
     User,
-    related_name='user_posts'
+    related_name='user_posts',
     on_delete=models.CASCADE
     )
-  created_dt = Model.DateTimeField(
+  created_dt = models.DateTimeField(
     auto_now_add=True
     )
   def __str__(self):

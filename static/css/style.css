@@ -1,0 +1,15 @@
+/* style.css */
+table {
+  border-collapse: collapse; /* يدمج الحدود بحيث ما يكونش فيه فراغات */
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black; /* يضيف خطوط حول كل خلية */
+  padding: 8px;            /* مسافة داخلية */
+  text-align: left;        /* محاذاة النص */
+}
+
+thead {
+  background-color: #f2f2f2; /* لون خلفية للعنوان */
+}

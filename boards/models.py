@@ -19,9 +19,12 @@ class Topic(models.Model):
   subject = models.CharField(
     max_length=255
     )
+  #علاقة بين الجداول
   board = models.ForeignKey(
     Board,
+    #اسم العلاقة
     related_name = 'board_topics',
+    #عند الحذف يحذف من الاخر
     on_delete=models.CASCADE
     )
   created_by = models.ForeignKey(
@@ -30,6 +33,7 @@ class Topic(models.Model):
     on_delete=models.CASCADE
     )
   created_dt = models.DateTimeField(
+    #اضافة التاريخ تلقائي
     auto_now_add=True
     )
   def __str__(self):

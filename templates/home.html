@@ -1,0 +1,49 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند HTML -->
+{% load static %} <!-- أمر من Django لتحميل الملفات الثابتة (CSS, JS, صور) -->
+
+<html lang="en"> <!-- بداية صفحة HTML وتحديد اللغة -->
+<head>
+    <meta charset="UTF-8"> <!-- تحديد ترميز الحروف -->
+    <title>Boards</title> <!-- عنوان الصفحة يظهر في التبويب -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> <!-- ربط ملف CSS من مجلد static -->
+</head>
+<body>
+  
+<div class="container "> <!-- عنصر Bootstrap لتوسيط المحتوى وإعطائه هوامش -->
+
+    <h2 class="text-center text-primary fw-bold"> <!-- عنوان رئيسي في منتصف الصفحة بلون أزرق وخط عريض -->
+      Boards
+    </h2>
+
+<table class='table'> <!-- إنشاء جدول باستخدام تنسيق Bootstrap -->
+  <thead class="table-dark"> <!-- رأس الجدول بخلفية داكنة -->
+    <tr>
+      <th>Board</th> <!-- عمود اسم البورد -->
+      <th>Posts</th> <!-- عمود عدد البوستات -->
+      <th>Topic</th> <!-- عمود المواضيع -->
+      <th>Last Post</th> <!-- عمود آخر بوست -->
+    </tr>
+  </thead>
+
+  <tbody>
+  <!-- انشاء حلقة for في Django لعرض كل البوردات -->
+    {% for board in boards %}
+    <tr>
+      <td>
+        {{board.name}} <!-- عرض اسم البورد -->
+        <small class='text-muted d-block'> <!-- عرض الوصف بخط صغير ولون باهت -->
+          {{board.description}}
+        </small>
+      </td>
+      <td>0</td> <!-- هنا ممكن لاحقاً تحط عدد البوستات -->
+      <td>0</td> <!-- هنا ممكن لاحقاً تحط عدد المواضيع -->
+      <td>0</td> <!-- هنا ممكن لاحقاً تحط آخر بوست -->
+    </tr>
+    <!-- انهاء حلقة for -->
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+  
+</body>
+</html>

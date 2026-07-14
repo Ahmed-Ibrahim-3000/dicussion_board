@@ -1,0 +1,21 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند HTML -->
+{% load static %} <!-- أمر من Django لتحميل الملفات الثابتة (CSS, JS, صور) -->
+
+<html lang="en"> <!-- بداية صفحة HTML وتحديد اللغة -->
+<head>
+    <meta charset="UTF-8"> <!-- تحديد ترميز الحروف -->
+    <title>{{board.name}}</title> <!-- عنوان الصفحة يظهر في التبويب -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> <!-- ربط ملف CSS من مجلد static -->
+</head>
+<body>
+<div class="container "> 
+
+  <h2 class="text-center text-primary fw-bold"> 
+      {{board.name}}
+    </h2>
+</div>
+  
+  
+  
+</body>
+</html>
